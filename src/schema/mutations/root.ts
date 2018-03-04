@@ -1,9 +1,9 @@
 import { GraphQLObjectType } from 'graphql';
 
 const Mutation = new GraphQLObjectType({
-  name: 'Mutation',
+	name: 'Mutation',
 
-  fields: () => ({}),
+	fields: () => ({}),
 });
 
 export default Mutation;
