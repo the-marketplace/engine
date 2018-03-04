@@ -12,8 +12,7 @@
 		"migrate-up": "NODE_PATH=src ts-node -r libs/dotenv node_modules/.bin/db-migrate up",
 		"migrate-down": "NODE_PATH=src ts-node -r libs/dotenv node_modules/.bin/db-migrate down",
 		"migrate-reset": "NODE_PATH=src ts-node -r libs/dotenv node_modules/.bin/db-migrate reset",
-		"cleanup": "yarn migrate-reset && yarn migrate-up",
-		"precommit": "lint-staged"
+		"cleanup": "yarn migrate-reset && yarn migrate-up"
 	},
 	"devDependencies": {
 		"@types/cors": "^2.8.3",
@@ -26,11 +25,11 @@
 		"@types/pg": "^7.4.4",
 		"db-migrate": "^0.10.5",
 		"dotenv": "^5.0.0",
-		"eslint": "^4.18.2",
 		"gql2ts": "^1.4.1",
 		"husky": "^0.15.0-rc.8",
 		"lint-staged": "^7.0.0",
 		"nodemon": "^1.14.12",
+		"prettier": "1.11.1",
 		"ts-jest": "^22.4.1",
 		"typescript": "^2.7.1"
 	},
@@ -46,6 +45,14 @@
 		"sql-template-strings": "^2.2.2"
 	},
 	"lint-staged": {
-		"*.ts": ["eslint --fix", "git add"]
+		"*.ts": [
+			"prettier --useTabs --single-quote --trailing-comma es5 --arrow-params avoid --write",
+			"git add"
+		]
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
 	}
 }
