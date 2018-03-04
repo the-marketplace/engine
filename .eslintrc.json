@@ -1,0 +1,26 @@
+{
+	"env": {
+		"es6": true,
+		"node": true
+	},
+	"extends": "eslint:recommended",
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"rules": {
+		"indent": ["error", "tab"],
+		"comma-dangle": ["error", "always-multiline"],
+		"linebreak-style": ["error", "unix"],
+		"quotes": ["error", "single"],
+		"semi": ["error", "always"],
+		"spaced-comment": "warn",
+		"default-case": "error",
+		"eqeqeq": "error",
+		"no-else-return": "warn",
+		"require-await": "error",
+		"require-jsdoc": "warn",
+		"block-spacing": "error",
+		"no-extra-semi": "warn",
+		"complexity": ["warn", 3]
+	}
+}
