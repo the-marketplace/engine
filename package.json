@@ -46,7 +46,7 @@
 	},
 	"lint-staged": {
 		"*.ts": [
-			"prettier --useTabs --single-quote --trailing-comma es5 --arrow-params avoid --write",
+			"prettier --use-tabs --single-quote --trailing-comma es5 --arrow-parens avoid --write",
 			"git add"
 		]
 	},
