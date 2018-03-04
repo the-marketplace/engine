@@ -1,7 +1,21 @@
 {
-	"extends": "../../tsconfig.json",
 	"compilerOptions": {
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"noImplicitThis": true,
+		"noUnusedParameters": true,
+		"forceConsistentCasingInFileNames": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"moduleResolution": "node",
+		"module": "commonjs",
+		"target": "es6",
 		"rootDir": "./src",
-		"outDir": "./dist"
-	}
+		"outDir": "./build",
+		"lib": [
+			"esnext.asynciterable",
+			"esnext"
+		]
+	},
 }
