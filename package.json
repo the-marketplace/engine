@@ -1,0 +1,42 @@
+{
+	"name": "@themarketplace/engine",
+	"version": "1.0.0",
+	"description": "theMarketplace backend, uses graphql.",
+	"main": "app.js",
+	"license": "APL-2",
+	"repository": "https://github.com/sirMerr/themarketplace/tree/master/packages/the-frontend",
+	"scripts": {
+		"start": "NODE_PATH=src nodemon src/app.ts --inspect",
+		"test": "jest --coverage",
+		"build": "tsc",
+		"migrate-up": "NODE_PATH=src ts-node -r libs/dotenv node_modules/.bin/db-migrate up",
+		"migrate-down": "NODE_PATH=src ts-node -r libs/dotenv node_modules/.bin/db-migrate down",
+		"migrate-reset": "NODE_PATH=src ts-node -r libs/dotenv node_modules/.bin/db-migrate reset",
+		"cleanup": "yarn migrate-reset && yarn migrate-up"
+	},
+	"devDependencies": {
+		"@types/cors": "^2.8.3",
+		"@types/dotenv": "^4.0.2",
+		"@types/express": "^4.11.1",
+		"@types/express-graphql": "^0.0.36",
+		"@types/graphql": "^0.12.4",
+		"@types/knex": "^0.14.7",
+		"@types/pg": "^7.4.4",
+		"db-migrate": "^0.10.5",
+		"dotenv": "^5.0.0",
+		"gql2ts": "^1.4.1",
+		"nodemon": "^1.14.12",
+		"typescript": "^2.7.1"
+	},
+	"dependencies": {
+		"cors": "^2.8.4",
+		"express": "^4.16.2",
+		"express-graphql": "^0.6.11",
+		"graphql": "^0.13.0",
+		"knex": "^0.14.3",
+		"moment": "^2.20.1",
+		"pg": "^7.4.1",
+		"pg-promise": "^7.5.3",
+		"sql-template-strings": "^2.2.2"
+	}
+}

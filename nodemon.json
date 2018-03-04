@@ -1,0 +1,5 @@
+{
+	"execMap": {
+		"ts": "tsc && ts-node src/app.ts"
+	}
+}
