@@ -4,18 +4,14 @@
 	"description": "theMarketplace backend, uses graphql.",
 	"main": "app.js",
 	"license": "APL2",
-	"repository":
-		"https://github.com/sirMerr/themarketplace/tree/master/packages/the-frontend",
+	"repository": "https://github.com/sirMerr/themarketplace/tree/master/packages/the-frontend",
 	"scripts": {
 		"start": "NODE_PATH=src nodemon src/app.ts --inspect",
 		"test": "jest --coverage",
 		"build": "tsc",
-		"migrate-up":
-			"NODE_PATH=src ts-node -r libs/dotenv node_modules/.bin/db-migrate up",
-		"migrate-down":
-			"NODE_PATH=src ts-node -r libs/dotenv node_modules/.bin/db-migrate down",
-		"migrate-reset":
-			"NODE_PATH=src ts-node -r libs/dotenv node_modules/.bin/db-migrate reset",
+		"migrate-up": "NODE_PATH=src ts-node -r libs/dotenv node_modules/.bin/db-migrate up",
+		"migrate-down": "NODE_PATH=src ts-node -r libs/dotenv node_modules/.bin/db-migrate down",
+		"migrate-reset": "NODE_PATH=src ts-node -r libs/dotenv node_modules/.bin/db-migrate reset",
 		"cleanup": "yarn migrate-reset && yarn migrate-up"
 	},
 	"devDependencies": {
@@ -28,6 +24,7 @@
 		"@types/knex": "^0.14.7",
 		"@types/pg": "^7.4.4",
 		"db-migrate": "^0.10.5",
+		"db-migrate-pg": "^0.3.1",
 		"dotenv": "^5.0.0",
 		"gql2ts": "^1.4.1",
 		"husky": "^0.15.0-rc.8",
@@ -35,6 +32,7 @@
 		"nodemon": "^1.14.12",
 		"prettier": "1.11.1",
 		"ts-jest": "^22.4.1",
+		"ts-node": "^5.0.1",
 		"typescript": "^2.7.1"
 	},
 	"dependencies": {
@@ -49,7 +47,10 @@
 		"sql-template-strings": "^2.2.2"
 	},
 	"lint-staged": {
-		"*.{ts, js, json}": ["prettier --write", "git add"]
+		"*.{ts, js, json}": [
+			"prettier --write",
+			"git add"
+		]
 	},
 	"husky": {
 		"hooks": {
