@@ -7,8 +7,6 @@ Backend for **themarketplace**. Consists of a GraphQL backend.
 ### Prerequesites
 - Node 6
 - yarn or npm
-
-#### engine
 - postgres
 - `.env` (ask a dev)
 
